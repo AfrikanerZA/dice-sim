@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link rel="stylesheet" href="css/style.css">
+
+        <title>Who Will Win Simulator</title>
+    </head>
+    <body>
+        <main id="centerContainer">
+            <div id="centerContent">
+                <h1>Who Will Win?</h1>
+
+                <div id="contentRow">
+                    <div class="contentColumn">
+                        <span>Player 1</span>
+                        <div class="randomDice">
+                            <img src="images/dice1.png" id="dice1" alt="dice1">
+                            <img src="images/dice2.png" id="dice2" alt="dice2">
+                            <img src="images/dice3.png" id="dice3" alt="dice3">
+                            <img src="images/dice4.png" id="dice4" alt="dice4">
+                            <img src="images/dice5.png" id="dice5" alt="dice5">
+                            <img src="images/dice6.png" id="dice6" alt="dice6">
+                        </div> 
+                    </div>
+
+                    <div class="contentColumn">
+                        <span>Player 2</span>
+                        <div class="randomDice">
+                            <img src="images/dice1.png" id="dice7" alt="dice1">
+                            <img src="images/dice2.png" id="dice8" alt="dice2">
+                            <img src="images/dice3.png" id="dice9" alt="dice3">
+                            <img src="images/dice4.png" id="dice10" alt="dice4">
+                            <img src="images/dice5.png" id="dice11" alt="dice5">
+                            <img src="images/dice6.png" id="dice12" alt="dice6">
+                        </div> 
+                    </div>
+                </div>
+
+                <button id="styleBtn" type="button" onclick="randomDiceFun()">Generate</button>
+            </div>
+        </main>
+
+        <script src="index.js"></script>
+    </body>
+</html>
