@@ -1,33 +1,14 @@
 const h1 = document.querySelector("h1");
-const dice1 = document.querySelector("#dice1");
-const dice2 = document.querySelector("#dice2");
-const dice3 = document.querySelector("#dice3");
-const dice4 = document.querySelector("#dice4");
-const dice5 = document.querySelector("#dice5");
-const dice6 = document.querySelector("#dice6");
-const dice7 = document.querySelector("#dice7");
-const dice8 = document.querySelector("#dice8");
-const dice9 = document.querySelector("#dice9");
-const dice10 = document.querySelector("#dice10");
-const dice11 = document.querySelector("#dice11");
-const dice12 = document.querySelector("#dice12");
+const playerDice1 = document.querySelectorAll(".playerDice1");
+const playerDice2 = document.querySelectorAll(".playerDice2");
 
-const diceArray1 = [dice1, dice2, dice3, dice4, dice5, dice6];
-const diceArray2 = [dice7, dice8, dice9, dice10, dice11, dice12];
+for (let i = 0; i < playerDice1.length && playerDice2.length; i++) {
+    playerDice1[i].setAttribute("class", "displayNoDice");
+    playerDice2[i].setAttribute("class", "displayNoDice");
 
-for (let i = 0; i < diceArray1.length; i++) {
-    diceArray1[i].setAttribute("class", "displayNoDice");
-
-    if (i === diceArray1.length - 1) {
-        diceArray1[i].setAttribute("class", "displayDice");
-    }
-}
-
-for (let i = 0; i < diceArray2.length; i++) {
-    diceArray2[i].setAttribute("class", "displayNoDice");
-
-    if (i === diceArray2.length - 1) {
-        diceArray2[i].setAttribute("class", "displayDice");
+    if (i === playerDice1.length - 1 && i === playerDice2.length - 1) {
+        playerDice1[i].setAttribute("class", "displayDice");
+        playerDice2[i].setAttribute("class", "displayDice");
     }
 }
 
@@ -35,19 +16,16 @@ let player1 = 0;
 let player2 = 0;
 
 function randomDiceFun(){
-    let randomOutput1 = Math.floor(Math.random() * diceArray1.length);
-    let randomOutput2 = Math.floor(Math.random() * diceArray2.length);
+    let randomOutput1 = Math.floor(Math.random() * playerDice1.length);
+    let randomOutput2 = Math.floor(Math.random() * playerDice2.length);
 
-    for (let i = 0; i < diceArray1.length; i++) {
-        diceArray1[i].setAttribute("class", "displayNoDice");
+    for (let i = 0; i < playerDice1.length && playerDice2.length; i++) {
+        playerDice1[i].setAttribute("class", "displayNoDice");
+        playerDice2[i].setAttribute("class", "displayNoDice");
     }
 
-    for (let i = 0; i < diceArray2.length; i++) {
-        diceArray2[i].setAttribute("class", "displayNoDice");
-    }
-
-    diceArray1[randomOutput1].removeAttribute("class");
-    diceArray2[randomOutput2].removeAttribute("class");   
+    playerDice1[randomOutput1].removeAttribute("class");
+    playerDice2[randomOutput2].removeAttribute("class");   
 
     if (randomOutput1 > randomOutput2) {
         h1.innerHTML = "Player 1 Won";

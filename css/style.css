@@ -61,7 +61,7 @@ img {
     color: #4ECCA3;
 }
 
-.randomDice {
+.randomDiceContainer {
     display: flex;
     justify-content: center;
 }
