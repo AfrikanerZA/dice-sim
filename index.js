@@ -14,6 +14,8 @@ for (let i = 0; i < playerDice1.length && playerDice2.length; i++) {
 
 let player1 = 0;
 let player2 = 0;
+let player1Score = document.querySelector("#player1Score");
+let player2Score = document.querySelector("#player2Score");
 
 function randomDiceFun(){
     let randomOutput1 = Math.floor(Math.random() * playerDice1.length);
@@ -37,10 +39,14 @@ function randomDiceFun(){
         h1.innerHTML = "Draw";
     }
 
+    player1Score.innerHTML = player1;
+    player2Score.innerHTML = player2;
+
     console.log(`player 1: ${player1}\nplayer 2: ${player2}`);
 }
 
 // TODO
-// Add player count box (HTML, CSS): Dice, Heads or Tail
+// Add player count box (HTML, CSS, JS): Heads or Tail
 // Add game mode (HTML, CSS, JS): Heads or Tail
-// Animation: Dice, Heads or Tail
+// Clear button
+// Organize CSS

@@ -9,38 +9,58 @@
         <title>Who Will Win Simulator</title>
     </head>
     <body>
-        <main id="centerContainer">
-            <div id="centerContent">
-                <h1>Who Will Win?</h1>
-
-                <div id="contentRow">
-                    <div class="contentColumn">
-                        <span>Player 1</span>
-                        <div class="randomDiceContainer">
-                            <img src="images/dice1.png" class="playerDice1" alt="dice1">
-                            <img src="images/dice2.png" class="playerDice1" alt="dice2">
-                            <img src="images/dice3.png" class="playerDice1" alt="dice3">
-                            <img src="images/dice4.png" class="playerDice1" alt="dice4">
-                            <img src="images/dice5.png" class="playerDice1" alt="dice5">
-                            <img src="images/dice6.png" class="playerDice1" alt="dice6">
-                        </div> 
+        <main id="layout">
+            <section id="scoreboard">
+                <div id="scoreboardText">
+                    <p>Scoreboard</p>
+                </div>
+                
+                <div id="players">
+                    <div class="playersSpace">
+                        <span>Player 1: </span>
+                        <span id="player1Score">0</span>
                     </div>
 
-                    <div class="contentColumn">
-                        <span>Player 2</span>
-                        <div class="randomDiceContainer">
-                            <img src="images/dice1.png" class="playerDice2" alt="dice1">
-                            <img src="images/dice2.png" class="playerDice2" alt="dice2">
-                            <img src="images/dice3.png" class="playerDice2" alt="dice3">
-                            <img src="images/dice4.png" class="playerDice2" alt="dice4">
-                            <img src="images/dice5.png" class="playerDice2" alt="dice5">
-                            <img src="images/dice6.png" class="playerDice2" alt="dice6">
-                        </div> 
+                    <div class="playersSpace">
+                        <span>Player 2: </span>
+                        <span id="player2Score">0</span>
                     </div>
                 </div>
+            </section>
+        
+            <section id="centerContainer">
+                <div id="centerContent">
+                    <h1>Who Will Win?</h1>
 
-                <button id="styleBtn" type="button" onclick="randomDiceFun()">Generate</button>
-            </div>
+                    <div id="contentRow">
+                        <div class="contentColumn">
+                            <span>Player 1</span>
+                            <div class="randomDiceContainer">
+                                <img src="images/dice1.png" class="playerDice1" alt="dice1">
+                                <img src="images/dice2.png" class="playerDice1" alt="dice2">
+                                <img src="images/dice3.png" class="playerDice1" alt="dice3">
+                                <img src="images/dice4.png" class="playerDice1" alt="dice4">
+                                <img src="images/dice5.png" class="playerDice1" alt="dice5">
+                                <img src="images/dice6.png" class="playerDice1" alt="dice6">
+                            </div> 
+                        </div>
+
+                        <div class="contentColumn">
+                            <span>Player 2</span>
+                            <div class="randomDiceContainer">
+                                <img src="images/dice1.png" class="playerDice2" alt="dice1">
+                                <img src="images/dice2.png" class="playerDice2" alt="dice2">
+                                <img src="images/dice3.png" class="playerDice2" alt="dice3">
+                                <img src="images/dice4.png" class="playerDice2" alt="dice4">
+                                <img src="images/dice5.png" class="playerDice2" alt="dice5">
+                                <img src="images/dice6.png" class="playerDice2" alt="dice6">
+                            </div> 
+                        </div>
+                    </div>
+
+                    <button id="styleBtn" type="button" onclick="randomDiceFun()">Generate</button>
+                </div>
+            </section>
         </main>
 
         <script src="index.js"></script>
