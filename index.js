@@ -68,7 +68,3 @@ function clear(){
 
     console.log("All cleared.");
 }
-
-// TODO
-// Mobile Responsive
-// Clear button
