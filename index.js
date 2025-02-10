@@ -45,8 +45,30 @@ function randomDiceFun(){
     console.log(`player 1: ${player1}\nplayer 2: ${player2}`);
 }
 
+const clearBtn = document.querySelector("#clearBtn");
+
+
+
+function clear(){
+    for (let i = 0; i < playerDice1.length && playerDice2.length; i++) {
+        playerDice1[i].setAttribute("class", "displayNoDice");
+        playerDice2[i].setAttribute("class", "displayNoDice");
+    }
+
+    playerDice1[playerDice1.length - 1].removeAttribute("class");
+    playerDice2[playerDice2.length - 1].removeAttribute("class");
+
+    h1.innerHTML = "Who Will Win?";
+
+    player1 = 0;
+    player2 = 0;
+
+    player1Score.innerHTML = player1;
+    player2Score.innerHTML = player2;
+
+    console.log("All cleared.");
+}
+
 // TODO
-// Add player count box (HTML, CSS, JS): Heads or Tail
-// Add game mode (HTML, CSS, JS): Heads or Tail
+// Mobile Responsive
 // Clear button
-// Organize CSS
