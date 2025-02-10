@@ -9,7 +9,11 @@
         <link rel="stylesheet" href="css/scoreboard.css">
         <link rel="stylesheet" href="css/buttonsStyle.css">
 
-        <title>Who Will Win Simulator</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
+
+        <title>Dice Sim</title>
     </head>
     <body>
         <main id="layout">
@@ -29,11 +33,13 @@
                         <span id="player2Score">0</span>
                     </div>
                 </div>
+
+                <button class="styleBtn" id="clearMobile" type="button" onclick="clear()">Clear</button>
             </section>
         
             <section id="centerContainer">
                 <div id="centerContent">
-                    <h1>Who Will Win?</h1>
+                    <h1>Dice Sim</h1>
 
                     <div id="contentRow">
                         <div class="contentColumn">
@@ -63,7 +69,7 @@
 
                     <div id="btnLayout">
                         <button class="styleBtn" type="button" onclick="randomDiceFun()">Roll</button>
-                        <button class="styleBtn" type="button" onclick="clear()">Clear</button>
+                        <button class="styleBtn" id="clearNotMobile" type="button" onclick="clear()">Clear</button>
                     </div>
                 </div>
             </section>

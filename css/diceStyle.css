@@ -32,3 +32,24 @@
 .displayNoDice {
     display: none;
 }
+
+
+
+@media only screen and (max-width: 1024px) {
+    #centerContainer {
+        margin-right: 0;
+        width: 100%;
+    }
+    
+    #centerContent {
+        width: 100%;
+    }
+}
+
+
+
+@media only screen and (max-width: 1200px) {
+    #centerContainer {
+        margin-right: 0;
+    }
+}

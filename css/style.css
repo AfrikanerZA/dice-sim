@@ -4,7 +4,7 @@ body {
     font-size: 2rem;
     color: #4ECCA3;
     font-family: 'Indie Flower', cursive;
-    height: 100vh;
+    height: fit-content;
 }
 
 h1 {
@@ -34,3 +34,17 @@ p {
     justify-content: center;
     align-items: center;
 }
+
+
+
+@media only screen and (max-width: 1024px) {
+    h1 {
+        font-size: 4rem;
+        width: 100%;
+    }
+
+    #layout {
+        flex-direction: column-reverse;
+    }
+}
+

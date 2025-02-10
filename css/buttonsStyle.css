@@ -5,6 +5,7 @@
 }
 
 .styleBtn {
+    font-family: 'Indie Flower', cursive;
     width: 120px;
     height: 50px;
     border-radius: 10px;
@@ -19,4 +20,28 @@
 .styleBtn:active {
     background-color: #232931;
     color: #4ECCA3;
+}
+
+#clearMobile {
+    display: none;
+}
+
+
+
+@media only screen and (max-width: 1024px) {
+    #clearNotMobile {
+        display: none;
+    }
+
+    .styleBtn {
+        width: 100%;
+        border-radius: 0;
+        font-weight: 700;
+        box-shadow: none;
+    }
+
+    #clearMobile {
+        display: block;
+        margin-top: 50px;
+    }
 }
