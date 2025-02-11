@@ -1,0 +1,26 @@
+/* Remove input number type arrows */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+#oddsChart {
+    display: flex;
+    margin: 40px 0px 40px 0px;
+    height: auto;
+}
+
+#oddsText {
+    margin-right: 14px;
+}
+
+#inputOdds {
+    font-family: 'Indie Flower', cursive;
+    font-size: 1.5rem;
+    width: 50px;
+    text-align: end;
+    padding-right: 10px;
+    border-radius: 5px 0px 0px 5px;
+    border: none;
+}

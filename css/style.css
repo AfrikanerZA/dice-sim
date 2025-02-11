@@ -14,7 +14,8 @@ h1 {
     color: #4ECCA3;
     width: 700px;
     text-align: center;
-    margin-top: 50px;
+    margin: 0;
+    padding-top: 15px;
 }
 
 img {
@@ -24,7 +25,6 @@ img {
 }
 
 p {
-    padding: 0px 0px 3px 0px; 
     margin: 0;
 }
 
@@ -48,3 +48,12 @@ p {
     }
 }
 
+@media only screen and (max-width: 414px) {
+    h1 {
+        font-size: 3rem;
+    }
+
+    body {
+        font-size: 1.5rem;
+    }
+}

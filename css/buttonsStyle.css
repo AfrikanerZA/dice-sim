@@ -27,6 +27,23 @@
     display: none;
 }
 
+#oddsBtn {
+    width: 60px;
+    border-radius: 0px 5px 5px 0px;
+    border: none;
+    background-color: #4ECCA3;
+    color: #232931;
+    font-weight: 700;
+    font-family: 'Indie Flower', cursive;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+#oddsBtn:active {
+    background-color: #232931;
+    color: #4ECCA3;
+}
+
 
 
 @media only screen and (max-width: 1024px) {
