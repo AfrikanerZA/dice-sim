@@ -23,7 +23,6 @@ function randomDiceFun(){
     let randomOutput1 = Math.floor(Math.random() * playerDice1.length);
     let randomOutput2 = Math.floor(Math.random() * playerDice2.length);
     let inputOdds = document.querySelector("#inputOdds").value;
-    console.log(inputOdds);
 
     if (inputOdds > 0) {
         for (let i = 0; i < playerDice1.length && playerDice2.length; i++) {
@@ -56,6 +55,7 @@ function randomDiceFun(){
         player2Score.innerHTML = player2;
     
         console.log(`player 1: ${player1}\nplayer 2: ${player2}`);
+        console.log(`Odds number: ${inputOdds}`);
     } else {
         swal("Best out of what?", "Please input a number", "warning");
     }
@@ -79,32 +79,17 @@ function playerNames(){
 
     console.log(`Player 1 Name: ${playerName1}\nPlayer 2 Name: ${playerName2}`);
 
-    if (playerName1 === null && playerName2 === null) {
-        playerScoreName1.innerHTML = "Player 1";
-        promptName1.innerHTML = "Player 1";
-        playerScoreName2.innerHTML = "Player 2";
-        promptName2.innerHTML = "Player 2";
-    } else if (playerName1 === null) {
-        playerScoreName1.innerHTML = "Player 1";
-        promptName1.innerHTML = "Player 1";
-        playerScoreName2.innerHTML = playerName2;
-        promptName2.innerHTML = playerName2;
-    } else if (playerName2 === null) {
-        playerScoreName2.innerHTML = "Player 2";
-        promptName2.innerHTML = "Player 2";
-        playerScoreName1.innerHTML = playerName1;
-        promptName1.innerHTML = playerName1;
-    } else {
-        playerScoreName1.innerHTML = playerName1;
-        playerScoreName2.innerHTML = playerName2;
-        promptName1.innerHTML = playerName1;
-        promptName2.innerHTML = playerName2;
+    if (playerName1 === null) {
+        playerName1 = "Player 1";
     }
-}
 
+    if (playerName2 === null) {
+        playerName2 = "Player 2";
+    }
+
+    playerScoreName1.innerHTML = playerName1;
+    playerScoreName2.innerHTML = playerName2;
+    promptName1.innerHTML = playerName1;
+    promptName2.innerHTML = playerName2;
+}
 setTimeout(playerNames, 500);
-
-
-function clearRefresh(){
-    location.reload();
-}
