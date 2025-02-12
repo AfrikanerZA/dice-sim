@@ -97,6 +97,10 @@ function playerNames(){
 setTimeout(playerNames, 500);
 
 
+function oddsFun(){
+    let inputOdds = document.querySelector("#inputOdds").value;
+    console.log(inputOdds);
+}
 
 
 

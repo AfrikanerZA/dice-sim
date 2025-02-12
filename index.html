@@ -45,7 +45,7 @@
                 <div id="centerContent">
                     <h1>Dice Sim</h1>
 
-                    <form id="oddsChart">
+                    <form id="oddsChart" onsubmit="return false">
                         <p id="oddsText">Best out of: </p>
                         <input 
                             id="inputOdds"
@@ -54,11 +54,7 @@
                             required
                         />
                         
-                        <input 
-                        id="oddsBtn"
-                        type="submit" 
-                        value="Save"
-                        />
+                        <button id="oddsBtn" type="button" onclick="oddsFun()">Save</button>
                     </form>
 
                     <div id="contentRow">
