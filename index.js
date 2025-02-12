@@ -100,6 +100,11 @@ setTimeout(playerNames, 500);
 function oddsFun(){
     let inputOdds = document.querySelector("#inputOdds").value;
     console.log(inputOdds);
+
+    // Testing error handling for mobile
+    if (inputOdds === "") {
+        alert("Please input a number");
+    }
 }
 
 
