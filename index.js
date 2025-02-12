@@ -22,38 +22,46 @@ let playerName2 = "";
 function randomDiceFun(){
     let randomOutput1 = Math.floor(Math.random() * playerDice1.length);
     let randomOutput2 = Math.floor(Math.random() * playerDice2.length);
+    let inputOdds = document.querySelector("#inputOdds").value;
+    console.log(inputOdds);
 
-    for (let i = 0; i < playerDice1.length && playerDice2.length; i++) {
-        playerDice1[i].setAttribute("class", "displayNoDice");
-        playerDice2[i].setAttribute("class", "displayNoDice");
-    }
-
-    playerDice1[randomOutput1].removeAttribute("class");
-    playerDice2[randomOutput2].removeAttribute("class");   
-
-    if (randomOutput1 > randomOutput2) {
-        if (playerName1 === null) {
-            h1.innerHTML = "Player 1 won!";
-        } else {
-            h1.innerHTML = `${playerName1} won!`;
+    if (inputOdds > 0) {
+        for (let i = 0; i < playerDice1.length && playerDice2.length; i++) {
+            playerDice1[i].setAttribute("class", "displayNoDice");
+            playerDice2[i].setAttribute("class", "displayNoDice");
         }
-        player1++;
-    } else if (randomOutput1 < randomOutput2) {
-        if (playerName2 === null) {
-            h1.innerHTML = "Player 2 won!";
+    
+        playerDice1[randomOutput1].removeAttribute("class");
+        playerDice2[randomOutput2].removeAttribute("class");   
+    
+        if (randomOutput1 > randomOutput2) {
+            if (playerName1 === null) {
+                h1.innerHTML = "Player 1 won!";
+            } else {
+                h1.innerHTML = `${playerName1} won!`;
+            }
+            player1++;
+        } else if (randomOutput1 < randomOutput2) {
+            if (playerName2 === null) {
+                h1.innerHTML = "Player 2 won!";
+            } else {
+                h1.innerHTML = `${playerName2} won!`;
+            }
+            player2++;
         } else {
-            h1.innerHTML = `${playerName2} won!`;
+            h1.innerHTML = "Draw";
         }
-        player2++;
+    
+        player1Score.innerHTML = player1;
+        player2Score.innerHTML = player2;
+    
+        console.log(`player 1: ${player1}\nplayer 2: ${player2}`);
     } else {
-        h1.innerHTML = "Draw";
+        swal("Best out of what?", "Please input a number", "warning");
     }
-
-    player1Score.innerHTML = player1;
-    player2Score.innerHTML = player2;
-
-    console.log(`player 1: ${player1}\nplayer 2: ${player2}`);
 }
+
+
 
 let playerScoreName1 = document.querySelector("#playerScoreName1");
 let playerScoreName2 = document.querySelector("#playerScoreName2");
@@ -95,18 +103,6 @@ function playerNames(){
 }
 
 setTimeout(playerNames, 500);
-
-
-function oddsFun(){
-    let inputOdds = document.querySelector("#inputOdds").value;
-    console.log(inputOdds);
-
-    
-    if (inputOdds === "") {
-        swal("Best out of what?", "Please input a number", "warning");
-    }
-}
-
 
 
 function clearRefresh(){

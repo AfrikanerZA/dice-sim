@@ -21,6 +21,6 @@ input::-webkit-inner-spin-button {
     width: 50px;
     text-align: end;
     padding-right: 10px;
-    border-radius: 5px 0px 0px 5px;
+    border-radius: 5px;
     border: none;
 }
