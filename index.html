@@ -28,36 +28,42 @@
                 
                 <div id="players">
                     <div class="playersSpace">
-                        <span>Player 1: </span>
+                        <span id="playerScoreName1">Player 1</span>
                         <span id="player1Score">0</span>
                     </div>
 
                     <div class="playersSpace">
-                        <span>Player 2: </span>
+                        <span id="playerScoreName2">Player 2</span>
                         <span id="player2Score">0</span>
                     </div>
                 </div>
 
-                <button class="styleBtn" id="clearMobile" type="button" onclick="clear()">Clear</button>
+                <button class="styleBtn" id="clearMobile" type="button" onclick="clearRefresh()">Clear</button>
             </section>
         
             <section id="centerContainer">
                 <div id="centerContent">
                     <h1>Dice Sim</h1>
 
-                    <div id="oddsChart">
+                    <form id="oddsChart">
                         <p id="oddsText">Best out of: </p>
                         <input 
                             id="inputOdds"
                             type="number"
                             placeholder="3"
+                            required
                         />
-                        <button id="oddsBtn" type="button">Save</button>
-                    </div>
+                        
+                        <input 
+                        id="oddsBtn"
+                        type="submit" 
+                        value="Save"
+                        />
+                    </form>
 
                     <div id="contentRow">
                         <div class="contentColumn">
-                            <span>Player 1</span>
+                            <span id="promptName1">Player 1</span>
                             <div class="randomDiceContainer">
                                 <img src="images/dice1.png" class="playerDice1" alt="dice1">
                                 <img src="images/dice2.png" class="playerDice1" alt="dice2">
@@ -69,7 +75,7 @@
                         </div>
 
                         <div class="contentColumn">
-                            <span>Player 2</span>
+                            <span id="promptName2">Player 2</span>
                             <div class="randomDiceContainer">
                                 <img src="images/dice1.png" class="playerDice2" alt="dice1">
                                 <img src="images/dice2.png" class="playerDice2" alt="dice2">
@@ -83,7 +89,7 @@
 
                     <div id="btnLayout">
                         <button class="styleBtn" type="button" onclick="randomDiceFun()">Roll</button>
-                        <button class="styleBtn" id="clearNotMobile" type="button" onclick="clear()">Clear</button>
+                        <button class="styleBtn" id="clearNotMobile" type="button" onclick="clearRefresh()">Clear</button>
                     </div>
                 </div>
             </section>
