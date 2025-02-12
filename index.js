@@ -93,3 +93,8 @@ function playerNames(){
     promptName2.innerHTML = playerName2;
 }
 setTimeout(playerNames, 500);
+
+const oddsChart = document.querySelector("#oddsChart");
+oddsChart.addEventListener("submit", function(event){
+    event.preventDefault();
+})
