@@ -45,7 +45,23 @@ function randomDiceFun(){
     console.log(`player 1: ${player1}\nplayer 2: ${player2}`);
 }
 
-const clearBtn = document.querySelector("#clearBtn");
+
+
+function playerNames(){
+    let playerName1 = prompt("What's your name, player 1? If you click cancel you will be known as... Player 1");
+    while (playerName1 === "") {
+        playerName1 = prompt("Seems like you did not gave us your name Player 1. What is your name?");
+    }
+
+    let playerName2 = prompt("What's your name, player 2? If you click cancel you will be known as... Player 2");
+    while (playerName2 === "") {
+        playerName2 = prompt("Seems like you did not gave us your name Player 2. What is your name?");
+    }
+
+    console.log(`Player 1: ${playerName1}\nPlayer 2: ${playerName2}`);
+}
+
+setTimeout(playerNames, 500);
 
 
 
