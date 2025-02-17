@@ -23,6 +23,8 @@ function randomDiceFun(){
     let randomOutput1 = Math.floor(Math.random() * playerDice1.length);
     let randomOutput2 = Math.floor(Math.random() * playerDice2.length);
     let inputOdds = document.querySelector("#inputOdds").value;
+    let oddsNumber = parseInt(inputOdds);
+    const rollBtn = document.querySelector("#rollBtn");
 
     if (inputOdds > 0) {
         for (let i = 0; i < playerDice1.length && playerDice2.length; i++) {
@@ -35,18 +37,44 @@ function randomDiceFun(){
     
         if (randomOutput1 > randomOutput2) {
             if (playerName1 === null) {
-                h1.innerHTML = "Player 1 won!";
+                h1.innerHTML = "A point to Player 1";
             } else {
-                h1.innerHTML = `${playerName1} won!`;
+                h1.innerHTML = `A point to ${playerName1}`;
             }
+
             player1++;
+
+            if(player1 === oddsNumber) {
+                rollBtn.disabled = true;
+                console.log("Game end");
+                if (playerName1 === null) {
+                    h1.innerHTML = "Player 1 won!";
+                    swal("You won, Player 1!", "Click clear to restart");
+                } else {
+                    h1.innerHTML = `${playerName1} won!`;
+                    swal(`You won, ${playerName1}`, "Click clear to restart");
+                }
+            }
         } else if (randomOutput1 < randomOutput2) {
             if (playerName2 === null) {
-                h1.innerHTML = "Player 2 won!";
+                h1.innerHTML = "A point to Player 2";
             } else {
-                h1.innerHTML = `${playerName2} won!`;
+                h1.innerHTML = `A point to ${playerName2}`;
             }
+
             player2++;
+
+            if(player2 === oddsNumber) {
+                rollBtn.disabled = true;
+                console.log("Game end");
+                if (playerName2 === null) {
+                    h1.innerHTML = "Player 2 won!";
+                    swal("You won, Player 2!", "Click clear to restart");
+                } else {
+                    h1.innerHTML = `${playerName2} won!`;
+                    swal(`You won, ${playerName2}`, "Click clear to restart");
+                }
+            }
         } else {
             h1.innerHTML = "Draw";
         }
@@ -55,7 +83,7 @@ function randomDiceFun(){
         player2Score.innerHTML = player2;
     
         console.log(`player 1: ${player1}\nplayer 2: ${player2}`);
-        console.log(`Odds number: ${inputOdds}`);
+        console.log(`Odds number: ${oddsNumber}`);
     } else {
         swal("Best out of what?", "Please input a number", "warning");
     }
