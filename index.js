@@ -52,7 +52,7 @@ function randomDiceFun(){
                     swal("You won, Player 1!", "Click clear to restart");
                 } else {
                     h1.innerHTML = `${playerName1} won!`;
-                    swal(`You won, ${playerName1}`, "Click clear to restart");
+                    swal(`You won, ${playerName1}!`, "Click clear to restart");
                 }
             }
         } else if (randomOutput1 < randomOutput2) {
@@ -72,7 +72,7 @@ function randomDiceFun(){
                     swal("You won, Player 2!", "Click clear to restart");
                 } else {
                     h1.innerHTML = `${playerName2} won!`;
-                    swal(`You won, ${playerName2}`, "Click clear to restart");
+                    swal(`You won, ${playerName2}!`, "Click clear to restart");
                 }
             }
         } else {
@@ -121,12 +121,6 @@ function playerNames(){
     promptName2.innerHTML = playerName2;
 }
 setTimeout(playerNames, 500);
-
-
-
-function clearBtn(){
-    location.reload();
-}
 
 const oddsChart = document.querySelector("#oddsChart");
 oddsChart.addEventListener("submit", function(event){
