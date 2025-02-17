@@ -44,7 +44,7 @@ function randomDiceFun(){
 
             player1++;
 
-            if(player1 === oddsNumber) {
+            if(player1 >= oddsNumber) {
                 rollBtn.disabled = true;
                 console.log("Game end");
                 if (playerName1 === null) {
@@ -64,7 +64,7 @@ function randomDiceFun(){
 
             player2++;
 
-            if(player2 === oddsNumber) {
+            if(player2 >= oddsNumber) {
                 rollBtn.disabled = true;
                 console.log("Game end");
                 if (playerName2 === null) {
@@ -121,6 +121,12 @@ function playerNames(){
     promptName2.innerHTML = playerName2;
 }
 setTimeout(playerNames, 500);
+
+
+
+function clearBtn(){
+    location.reload();
+}
 
 const oddsChart = document.querySelector("#oddsChart");
 oddsChart.addEventListener("submit", function(event){
