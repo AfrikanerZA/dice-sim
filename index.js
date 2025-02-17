@@ -1,6 +1,7 @@
 const h1 = document.querySelector("h1");
 const playerDice1 = document.querySelectorAll(".playerDice1");
 const playerDice2 = document.querySelectorAll(".playerDice2");
+const randomDiceContainer = document.querySelectorAll(".randomDiceContainer");
 
 for (let i = 0; i < playerDice1.length && playerDice2.length; i++) {
     playerDice1[i].setAttribute("class", "displayNoDice");
@@ -20,6 +21,13 @@ let playerName1 = "";
 let playerName2 = "";
 
 function randomDiceFun(){
+    for (let i = 0; i < randomDiceContainer.length; i++) {
+        randomDiceContainer[i].classList.remove("rotate");
+        randomDiceContainer[i].offsetWidth; //First it will remove rotate, then browser "reflow", then add rotate. Rinse and repeat, each time the roll btn is clicked
+        randomDiceContainer[i].classList.add("rotate");
+    }
+
+
     let randomOutput1 = Math.floor(Math.random() * playerDice1.length);
     let randomOutput2 = Math.floor(Math.random() * playerDice2.length);
     let inputOdds = document.querySelector("#inputOdds").value;
@@ -49,10 +57,10 @@ function randomDiceFun(){
                 console.log("Game end");
                 if (playerName1 === null) {
                     h1.innerHTML = "Player 1 won!";
-                    swal("You won, Player 1!", "Click clear to restart");
+                    swal("You won, Player 1!", "Click clear to restart", "success");
                 } else {
                     h1.innerHTML = `${playerName1} won!`;
-                    swal(`You won, ${playerName1}!`, "Click clear to restart");
+                    swal(`You won, ${playerName1}!`, "Click clear to restart", "success");
                 }
             }
         } else if (randomOutput1 < randomOutput2) {
@@ -69,10 +77,10 @@ function randomDiceFun(){
                 console.log("Game end");
                 if (playerName2 === null) {
                     h1.innerHTML = "Player 2 won!";
-                    swal("You won, Player 2!", "Click clear to restart");
+                    swal("You won, Player 2!", "Click clear to restart", "success");
                 } else {
                     h1.innerHTML = `${playerName2} won!`;
-                    swal(`You won, ${playerName2}!`, "Click clear to restart");
+                    swal(`You won, ${playerName2}!`, "Click clear to restart", "success");
                 }
             }
         } else {
@@ -85,7 +93,7 @@ function randomDiceFun(){
         console.log(`player 1: ${player1}\nplayer 2: ${player2}`);
         console.log(`Odds number: ${oddsNumber}`);
     } else {
-        swal("Best out of what?", "Please input a number", "warning");
+        swal("Best out of what?", "Please input a number", "info");
     }
 }
 
