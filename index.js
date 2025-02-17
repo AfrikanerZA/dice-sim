@@ -126,3 +126,12 @@ const oddsChart = document.querySelector("#oddsChart");
 oddsChart.addEventListener("submit", function(event){
     event.preventDefault();
 })
+
+let invalidInput = document.querySelector(".invalidInput");
+const invalidSymbols = ["e", "+", "-"];
+
+invalidInput.addEventListener("keydown", function(event){
+    if (invalidSymbols.includes(event.key)) {
+        event.preventDefault();
+    }
+})
