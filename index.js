@@ -22,11 +22,9 @@ let playerName2 = "";
 
 function randomDiceFun(){
     for (let i = 0; i < randomDiceContainer.length; i++) {
+        randomDiceContainer[i].classList.remove("rotate");
+        randomDiceContainer[i].offsetWidth; //First it will remove rotate, then browser "reflow", then add rotate. Rinse and repeat, each time the roll btn is clicked.
         randomDiceContainer[i].classList.add("rotate");
-        
-        setTimeout(()=>{
-            randomDiceContainer[i].classList.remove("rotate");
-        }, 1000)
     }
 
 
